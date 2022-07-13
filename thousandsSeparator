@@ -1,0 +1,16 @@
+def format_number(num):
+    i = 0
+    szStr = str(num)
+    length = len(szStr)
+    remainder = length % 3
+    szNewStr = szStr[0 : remainder]
+    for i in range(remainder, length):
+        if i == remainder and i == 0:
+           szNewStr = szNewStr + szStr[i]
+        elif (i - remainder) % 3 == 0:
+            szNewStr = szNewStr + "," + szStr[i]
+        else:
+            szNewStr = szNewStr + szStr[i]
+    return szNewStr
+    
+print(format_number(47844356))
